@@ -1,4 +1,4 @@
-import invite from '../public/invite.png';
+import invite from './assets/invite.png';
 import './App.css';
 
 export default function App() {
