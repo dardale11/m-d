@@ -54,13 +54,41 @@ button {
   padding: 10px;
   background-color: rgba(212, 148, 99);
   color: white;
-  border-radius: 15px;
-  border: 10px rgb(215, 134, 102) double;
+  border-radius: 25px;
+  border: 10px rgb(6, 5, 5) double;
   margin-bottom: 20px;
 }
 
 button:hover {
   background-color: rgba(212, 148, 99, 0.5);
-  color: white;
-  border: 10px rgb(215, 134, 102, 0.5) double;
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    max-width: 100%;
+  }
+
+  .input-wrapper {
+    margin: 5px;
+    padding: 10px;
+    font-size: small;
+  }
 }
