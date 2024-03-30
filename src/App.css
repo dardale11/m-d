@@ -9,6 +9,10 @@
     margin: 0;
     padding: 0;
   }
+
+  .feedback {
+    font-size: 32px;
+  }
   overflow: auto;
 }
 

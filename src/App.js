@@ -34,20 +34,24 @@ export default function App() {
   return (
     <div className='App'>
       <img alt='' src={invite} />
-      <form className='form-wrapper' onSubmit={(e) => Submit(e)}>
-        <div className='input-wrapper'>
-          <p>?כמה תגיעו</p>
-          <input placeholder={0} name='guests' type='number' />
-        </div>
-        <div className='input-wrapper'>
-          <p>?צריכים הסעה</p>
-          <input name='ride' type='checkbox' />
-        </div>
-        {!isSubmit && <button type='submit'>Submit</button>}
-        {isSubmit && isSuccess === 'pending' && <div className='loader'></div>}
-        {isSuccess === 'true' && <p>!נתראה שם</p>}
-        {isSuccess === 'false' && <p>?משו קרה... תנסו שוב אחר כך</p>}
-      </form>
+      {!isSubmit && (
+        <form className='form-wrapper' onSubmit={(e) => Submit(e)}>
+          <div className='input-wrapper'>
+            <p>?כמה תגיעו</p>
+            <input placeholder={0} name='guests' type='number' />
+          </div>
+          <div className='input-wrapper'>
+            <p>?צריכים הסעה</p>
+            <input name='ride' type='checkbox' />
+          </div>
+          <button type='submit'>Submit</button>
+        </form>
+      )}
+      {isSubmit && isSuccess === 'pending' && <div className='loader'></div>}
+      {isSuccess === 'true' && <p className='feedback'>!נתראה שם</p>}
+      {isSuccess === 'false' && (
+        <p className='feedback'>?משו קרה... תנסו שוב אחר כך</p>
+      )}
     </div>
   );
 }
