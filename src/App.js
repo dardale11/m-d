@@ -6,7 +6,7 @@ export default function App() {
   const [isSubmit, setSubmit] = useState(false);
   const [isSuccess, setSuccess] = useState('pending');
   const urlParams = new URLSearchParams(window.location.search);
-  const name = urlParams.get('name');
+  const name = urlParams.get('name').replaceAll('-', ' ');
   console.log(name);
 
   function Submit(e) {
@@ -16,7 +16,7 @@ export default function App() {
     const formEle = document.querySelector('form');
     const formDatab = new FormData(formEle);
     fetch(
-      'https://script.google.com/macros/s/AKfycbx0TLUKdN8vD1Z9SoVh6j5nssKVaVY0UF-i0mfRZB5GvUCJ-cXP9Edl7RsuWwOD6A/exec',
+      'https://script.google.com/macros/s/AKfycbwddzVjJzgYweIkyl4TUzeec_VyW6iygu0ZzT-7v5uw3ByauHsZ4mu-E0LRrZQCxg/exec',
       {
         method: 'POST',
         body: { ...formDatab, name },
